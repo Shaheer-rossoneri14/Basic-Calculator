@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
-    double in1 = 0, in2 = 0;
+    double in1 = 0, i2 = 0;
     TextView edittext1;
     boolean Add, Sub, Multiply, Divide, Remainder, deci;
-    Button button_0, button_1, button_2, button_3, button_4, button_5, button_6, button_7,
-            button_8, button_9, button_Add, button_Sub,
+    Button button_0, button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_Add, button_Sub,
             button_Mul, button_Div, button_Equ, button_Del, button_Dot, button_Remainder;
 
     @Override
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     in1 = Float.parseFloat(edittext1.getText() + "");
                     Add = true;
                     deci = false;
-                    edittext1.setText(edittext1.getText() + "+");
+                    edittext1.setText(null);
                 }
             }
         });
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                     in1 = Float.parseFloat(edittext1.getText() + "");
                     Sub = true;
                     deci = false;
-                    edittext1.setText(edittext1.getText() + "-");
+                    edittext1.setText(null);
                 }
             }
         });
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     in1 = Float.parseFloat(edittext1.getText() + "");
                     Multiply = true;
                     deci = false;
-                    edittext1.setText(edittext1.getText() + "*");
+                    edittext1.setText(null);
                 }
             }
         });
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     in1 = Float.parseFloat(edittext1.getText() + "");
                     Divide = true;
                     deci = false;
-                    edittext1.setText(edittext1.getText() + "/");
+                    edittext1.setText(null);
                 }
             }
         });
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                     in1 = Float.parseFloat(edittext1.getText() + "");
                     Remainder = true;
                     deci = false;
-                    edittext1.setText(edittext1.getText() + "%");
+                    edittext1.setText(null);
                 }
             }
         });
@@ -176,40 +176,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (Add || Sub || Multiply || Divide || Remainder) {
-                    in2 = Float.parseFloat(edittext1.getText() + "");
+                    i2 = Float.parseFloat(edittext1.getText() + "");
                 }
 
                 if (Add) {
-                    double sum1 = in1 + in2;
-                    String a = String.valueOf(sum1);
-                    edittext1.setText(a);
+
+                    edittext1.setText(in1 + i2 + "");
                     Add = false;
                 }
 
                 if (Sub) {
-                    double diff1 = in1 - in2;
-                    String b = String.valueOf(diff1);
-                    edittext1.setText(b);
+
+                    edittext1.setText(in1 - i2 + "");
                     Sub = false;
                 }
 
                 if (Multiply) {
-                    double mul1 = in1 * in2;
-                    String c = String.valueOf(mul1);
-                    edittext1.setText(c);
+                    edittext1.setText(in1 * i2 + "");
                     Multiply = false;
                 }
 
                 if (Divide) {
-                    double div1 = in1 / in2;
-                    String d = String.valueOf(div1);
-                    edittext1.setText(d);
+                    edittext1.setText(in1 / i2 + "");
                     Divide = false;
                 }
                 if (Remainder) {
-                    double rem1 = in1 % in2;
-                    String e = String.valueOf(rem1);
-                    edittext1.setText(e);
+                    edittext1.setText(in1 % i2 + "");
                     Remainder = false;
                 }
             }
@@ -220,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 edittext1.setText("");
                 in1 = 0.0;
-                in2 = 0.0;
+                i2 = 0.0;
             }
         });
 
@@ -238,3 +230,32 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
